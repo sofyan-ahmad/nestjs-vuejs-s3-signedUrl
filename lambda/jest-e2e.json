@@ -1,0 +1,41 @@
+{
+  "testEnvironment": "node",
+  "moduleFileExtensions": ["ts", "tsx", "js", "json"],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "testRegex": "./e2e/.*\\.(e2e-test|e2e-spec).(ts|tsx|js)$",
+  "coveragePathIgnorePatterns": [
+    "node_modules",
+    "test-config",
+    "interfaces",
+    "jestGlobalMocks.ts",
+    ".module.ts",
+    "<rootDir>/src/app/main.ts",
+    ".mock.ts",
+    "src/migrations",
+    "src/utils"
+  ],
+  "collectCoverageFrom": [
+    "src/*.{js,jsx,tsx,ts}",
+    "src/**/*.{js,jsx,tsx,ts}",
+    "!**/handler.{js,jsx,tsx,ts}",
+    "!**/swagger.options.{js,jsx,tsx,ts}",
+    "!**/main.{js,jsx,tsx,ts}",
+    "!**/node_modules/**",
+    "!**/vendor/**"
+  ],
+  "coverageThreshold": {
+    "src/**/*.ts": {
+      "statements": 40,
+      "branches": 0,
+      "functions": 50,
+      "lines": 40
+    },
+    "src/**/*.controller.ts": {
+      "functions": 80,
+      "branches": 0
+    }
+  },
+  "coverageReporters": ["json", "lcov"]
+}

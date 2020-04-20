@@ -1,0 +1,62 @@
+service:
+  name: presigned-S3-service
+
+provider:
+  name: aws
+  description: S3 Service
+  role: arn:aws:iam::#{AWS::AccountId}:role/lambda-role
+  region: ap-southeast-1
+  runtime: nodejs12.x
+  memorySize: 512
+  stage: ${opt:stage, 'dev'}
+  environment:
+    AWS_ACCOUNT_ID: "#{AWS::AccountId}"
+    STAGE: ${self:provider.stage}
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+  - serverless-domain-manager
+  - serverless-plugin-optimize
+  - serverless-pseudo-parameters
+
+package:
+  individually: true
+  exclude:
+    - .git/**
+    - src/**
+    - test/**
+    - e2e/**
+    - views/**
+    - docker-postgres-init/**
+    - coverage/**
+    - nodemon.json
+    - README.md
+    - ./*.json
+    - ./*.log
+    - ./*.yml
+    - ./*.lock
+  include:
+    - package.json
+
+functions:
+  main:
+    handler: dist/handler.handler
+    events:
+      - http:
+          cors: true
+          path: "/swagger"
+          method: any
+      - http:
+          method: any
+          path: /{proxy+}
+          cors:
+            origin: "*"
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+            allowCredentials: true

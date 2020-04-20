@@ -1,0 +1,52 @@
+{
+  "prettier.singleQuote": true,
+  "files.autoSave": "onFocusChange",
+  "prettier.packageManager": "yarn",
+  "prettier.trailingComma": "es5",
+  "cSpell.words": [
+    "awsconfig",
+    "awsmobile",
+    "browserslist",
+    "cognito",
+    "cond",
+    "cors",
+    "datagrid",
+    "dotenv",
+    "dropzone",
+    "flashcoffee",
+    "gopay",
+    "keychain",
+    "nestjs",
+    "nestjsx",
+    "nodemon",
+    "noredirect",
+    "openid",
+    "payement",
+    "persistedstate",
+    "phonenumber",
+    "postgres",
+    "precommit",
+    "randomstring",
+    "signin",
+    "signup",
+    "sofyan",
+    "timeago",
+    "typeorm",
+    "unmount",
+    "user",
+    "uuid",
+    "uuidv",
+    "vuetify",
+    "vuex",
+    "websockets"
+  ],
+  "vetur.completion.scaffoldSnippetSources": {},
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "singleQuote": true
+    }
+  },
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.validation.template": true,
+  "editor.formatOnSave": true
+}

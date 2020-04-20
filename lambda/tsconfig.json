@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "allowJs": false,
+    "strict": true,
+    "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/*.ts", "src/**/*.ts"],
+  "exclude": [
+    "node_modules/*",
+    "node_modules/@types",
+    "**/*.spec.ts",
+    "clients",
+    "test",
+    "dist"
+  ],
+  "buildOnSave": true
+}
