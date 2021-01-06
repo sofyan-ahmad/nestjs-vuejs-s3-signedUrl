@@ -44,7 +44,7 @@
     "aws-lambda": "^1.0.5",
     "aws-sdk": "^2.658.0",
     "aws-serverless-express": "^3.3.8",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.1",
     "dotenv": "^8.2.0",
